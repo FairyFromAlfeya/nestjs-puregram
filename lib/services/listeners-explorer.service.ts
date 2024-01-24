@@ -320,8 +320,8 @@ export class ListenersExplorerService
           break;
 
         case ListenerHandlerType.Hears:
-          const hearConditions: HearConditions<unknown> | undefined =
-            args[0] as HearConditions<unknown>;
+          const hearConditions: HearConditions<any> | undefined =
+            args[0] as HearConditions<any>;
           if (!hearConditions) break;
 
           this.hearManager.hear(hearConditions, handler);

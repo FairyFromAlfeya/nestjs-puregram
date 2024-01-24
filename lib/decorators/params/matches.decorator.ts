@@ -15,7 +15,7 @@ export const Matches = createParamDecorator(
     const telegramContext: Context = executionContext.getContext();
     if (!telegramContext.is(['message'])) return [];
 
-    const matches: RegExpMatchArray =
+    const matches: RegExpMatchArray | [] =
       (telegramContext as MessageContext & ContextMatch).$match ?? [];
 
     return data ? matches[data] : matches;
